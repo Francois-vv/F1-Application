@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Views/Home";
 import About from "./Views/About";
-import Driver from "./Views/Driver";
+import Season from "./Views/Season";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/drivers/:driverId">
-              <Driver />
+            <Route path="/season/:seasonId">
+              <Season />
             </Route>
           </Switch>
         </div>
