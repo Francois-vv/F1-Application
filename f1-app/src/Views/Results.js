@@ -3,10 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loader from "../Components/Loader";
 
-function Season() {
-  const { seasonId } = useParams();
-  const url = `http://ergast.com/api/f1/${seasonId}.json`;
-  const [season, setSeason] = useState({
+function Results() {
+  const { seasonId, resultsId } = useParams();
+  const url = `http://ergast.com/api/f1/${seasonId}/${resultsId}/results.json`;
+  const [results, setResults] = useState({
     loading: false,
     data: null,
     error: false
@@ -15,7 +15,7 @@ function Season() {
   let content = null;
 
   useEffect(() => {
-    setSeason({
+    setResults({
       loading: true,
       data: null,
       error: false
@@ -23,14 +23,14 @@ function Season() {
     axios
       .get(url)
       .then(response => {
-        setSeason({
+        setResults({
           loading: false,
           data: response.data,
           error: false
         });
       })
       .catch(() => {
-        setSeason({
+        setResults({
           loading: false,
           data: null,
           error: true
@@ -38,22 +38,22 @@ function Season() {
       });
   }, [url]);
 
-  if (season.error) {
+  if (results.error) {
     content = <p>There was an error please refresh or try again later.</p>;
   }
 
-  if (season.loading) {
+  if (results.loading) {
     content = <Loader />;
   }
 
-  if (season.data) {
+  if (results.data) {
     content = (
       <div>
         <h1 className="text-2xl font-bold mb-3">
-          F1 {season.data.MRData.RaceTable.season} Season
+          F1 {results.data.MRData.RaceTable.season} Season
         </h1>
         <div className="font-bold text-xl mb-3">
-          Results: {season.data.MRData.total}
+          {results.data.MRData.RaceTable.Races[0].raceName}
         </div>
       </div>
     );
@@ -62,4 +62,4 @@ function Season() {
   return <div>{content}</div>;
 }
 
-export default Season;
+export default Results;
