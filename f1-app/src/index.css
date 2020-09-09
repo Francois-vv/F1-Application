@@ -4,6 +4,9 @@
 
 @tailwind utilities;
 
+/* Base Styles */
+
+
 /* Loader from https://codepen.io/comehope/pen/KBxYZg */
 
 .loader {
@@ -23,14 +26,14 @@
 .loader::before {
   width: inherit;
   height: 0.2em;
-  background-color: black;
+  background-color: white;
 }
 
 .loader::after {
   box-sizing: border-box;
   width: 50%;
   height: inherit;
-  border: 0.2em solid hsla(0, 0%, 0%);
+  border: 0.2em solid white;
   border-radius: 50%;
   left: 25%;
 }

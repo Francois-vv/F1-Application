@@ -3,9 +3,9 @@ import Navigation from './Navigation'
 
 function Header() {
     return(
-        <header className="border-b p-3 flex justify-between items-center">
-            <span className="font-bold">
-                F1 Application
+        <header className="fixed flex items-center justify-between w-full p-3 bg-gray-900 shadow-sm">
+            <span className="text-xl font-bold text-red-700">
+                F1
             </span>
 
             <Navigation />

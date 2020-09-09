@@ -8,10 +8,10 @@ import Results from "./Views/Results";
 
 function App() {
   return (
-    <div className="relative pb-10">
+    <div className="static min-h-screen pb-10 text-gray-200 bg-gray-800">
       <Router>
         <Header />
-        <div className="p-3">
+        <div className="p-3 pt-20">
           <Switch>
             <Route exact path="/">
               <Home />

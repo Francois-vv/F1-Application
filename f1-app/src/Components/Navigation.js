@@ -21,7 +21,7 @@ function Navigation() {
 
   return (
     <nav>
-      <span className="text-xl">
+      <span className="text-xl text-red-700">
         <FontAwesomeIcon icon={faBars} onClick={() => setShowMenu(!showMenu)} />
       </span>
 
@@ -31,7 +31,7 @@ function Navigation() {
             <animated.div
               key={key}
               style={props}
-              className="bg-black-t-50 fixed top-0 left-0 w-full h-full z-50"
+              className="fixed top-0 left-0 z-50 w-full h-full bg-black-t-50"
               onClick={() => setShowMenu(false)}
             ></animated.div>
           )
@@ -43,7 +43,7 @@ function Navigation() {
             <animated.div
               key={key}
               style={props}
-              className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow"
+              className="fixed top-0 left-0 z-50 w-4/5 h-full bg-gray-900 shadow"
             >
               <NavigationMenu closeMenu={() => setShowMenu(false)} />
             </animated.div>

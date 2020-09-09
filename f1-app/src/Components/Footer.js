@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return(
-        <footer className="bg-gray-200 text-center text-xs p-3 absolute bottom-0 w-full">
+        <footer className="fixed bottom-0 w-full p-3 text-xs text-center bg-gray-900">
             &copy; Copyright 2020
         </footer>
     )

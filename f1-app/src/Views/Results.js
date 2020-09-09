@@ -49,12 +49,20 @@ function Results() {
   if (results.data) {
     content = (
       <div>
-        <h1 className="text-2xl font-bold mb-3">
-          F1 {results.data.MRData.RaceTable.season} Season
+        <h1 className="mb-3 text-2xl font-bold">
+          Results
         </h1>
-        <div className="font-bold text-xl mb-3">
+        <div className="mb-3 text-xl font-bold">
           {results.data.MRData.RaceTable.Races[0].raceName}
         </div>
+        <table className="table-auto">
+        <thead>
+          <tr>
+            <th className="px-4 py-2"></th>
+          </tr>
+        </thead>
+
+        </table>
       </div>
     );
   }

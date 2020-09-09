@@ -61,7 +61,7 @@ function Home() {
 
   return (
     <div>
-      <h1 className="font-bold text-2xl">Current F1 Schedule</h1>
+      <h1 className="pb-3 text-2xl font-bold">Current F1 Schedule</h1>
       {content}
     </div>
   );
