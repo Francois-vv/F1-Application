@@ -1,17 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function NavigationMenu(props) {
   return (
     <div>
-      <div className="p-3 text-xl font-bold text-red-700">F1</div>
-      <div className="min-h-screen bg-gray-800">
+      <div className="p-3 text-xl font-bold border-b text-tomato-700">
+        F1
+      </div>
+      <div className="min-h-screen bg-gray-900">
         <ul>
           <li>
             <Link
               to="/"
-              className=
-              "block p-3 font-semibold text-red-600"
+              className="block p-3 font-semibold text-tomato-600"
               onClick={props.closeMenu}
             >
               Home
@@ -20,7 +21,7 @@ function NavigationMenu(props) {
           <li>
             <Link
               to="/about"
-              className="block p-3 font-semibold text-red-600"
+              className="block p-3 font-semibold text-tomato-600"
               onClick={props.closeMenu}
             >
               About
@@ -30,7 +31,7 @@ function NavigationMenu(props) {
       </div>
 
     </div>
-  );
+  )
 }
 
-export default NavigationMenu;
+export default NavigationMenu

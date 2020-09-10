@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function Loader() {
   return (
@@ -9,7 +9,7 @@ function Loader() {
         <span></span>
       </div>
     </div>
-  );
+  )
 }
 
-export default Loader;
+export default Loader
