@@ -14,6 +14,8 @@ function Results() {
 
   let content = null
 
+  console.log(results)
+
   if (results.error) {
     content = <p>There was an error please refresh or try again later.</p>
   }
@@ -41,7 +43,7 @@ function Results() {
       <h1 className="mb-3 text-3xl font-bold text-center">
           Results
       </h1>
-      <h3 className="pb-3 mb-3 text-2xl font-bold text-center border-b border-gray-600">
+      <h3 className="pb-3 text-2xl font-bold text-center border-b border-gray-600">
         {currentRace}
       </h3>
     {content}
