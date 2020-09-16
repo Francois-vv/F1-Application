@@ -96,6 +96,9 @@ function ResultCard(props){
                     </div>
                 </div>
                 <div className="p-3 mb-3 ml-2 mr-2 bg-gray-700 rounded-md">
+                    <h4 className="pb-1 text-lg font-bold text-center">
+                        {props.result.Constructor.name}
+                    </h4>
                     <div className="flex flex-row">
                         <div className="w-1/2" >
                             <p className="text-base font-bold">
