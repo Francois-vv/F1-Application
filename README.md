@@ -8,3 +8,5 @@ The application uses yarn for package management. To run the application node.js
 yarn install
 yarn start
 ```
+
+When running application use the browsers dev tools to run the application in mobile view. Currently the application is being developed for mobile view, will be made responsive to screen size at a later date.
