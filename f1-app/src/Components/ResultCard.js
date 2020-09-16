@@ -2,65 +2,136 @@
 
 function ResultCard(props){
 
-    console.log(props.result.FastestLap.rank)
-
-    let flRank = parseInt(props.result.FastestLap.rank)
+    let content = null
     let flContent = null
-    // Check if drivers fastest lap is the fastest lap of the race
-    if (flRank === 1)
-    {
-        flContent =
-            <p className="text-base font-normal text-left">
-                <span className="font-bold">Fastest Lap: </span>
-                <span className="font-semibold text-purple-500">
+    let raceStatus = props.result.status
+    let flRank = null
+
+    // Check if a fastest lap exists
+    if (props.result.FastestLap){
+        flRank = parseInt(props.result.FastestLap.rank)
+        // Check if the driver set the fastest lap of the race
+        if (flRank === 1)
+        {
+            flContent =
+                <p className="text-base font-semibold text-left text-purple-500">
                     {props.result.FastestLap.Time.time}
-                </span>
-            </p>
+                </p>
+        } else {
+            flContent =
+                <p className="text-base font-normal text-left">
+                    {props.result.FastestLap.Time.time}
+                </p>
+        }
     } else {
         flContent =
-            <p className="text-base font-normal text-left">
-                <span className="font-bold">Fastest Lap: </span>
-                {props.result.FastestLap.Time.time}
-            </p>
+        <p className="text-base font-normal text-left">
+            N/A
+        </p>
     }
 
-    return(
-        <div className="overflow-hidden border-b border-gray-600">
-            <div className="flex flex-row w-screen p-3">
-                <div className="w-1/2 ">
-                    <h3 className="pb-2 text-xl font-bold text-left">
-                        {props.result.Driver.givenName} {props.result.Driver.familyName}
-                    </h3>
-                        <p className="pb-1 text-lg font-bold">
-                            {props.result.Constructor.name}
-                        </p>
-                        <p className="text-base font-normal">
-                            <span className="font-bold">
+    // Check if driver has completed the race
+    if (raceStatus === "Finished"){
+        content =
+            <div className="overflow-hidden border-b border-gray-600">
+                <div className="flex flex-row w-screen p-3">
+                    <div className="w-3/4 ">
+                        <h3 className="text-xl font-bold text-left">
+                            {props.result.Driver.givenName} {props.result.Driver.familyName} #{props.result.number}
+                        </h3>
+                    </div>
+                    <div className="w-1/4 ">
+                        <h3 className="pr-6 text-xl font-bold text-right">
+                            {props.result.position}
+                        </h3>
+                    </div>
+                </div>
+                <div className="p-3 mb-3 ml-2 mr-2 bg-gray-700 rounded-md">
+                    <h4 className="pb-1 text-lg font-bold text-center">
+                        {props.result.Constructor.name}
+                    </h4>
+                    <div className="flex flex-row">
+                        <div className="w-1/2" >
+                            <p className="text-base font-bold">
                                 Time:
-                            </span> P{props.result.grid}
-                        </p>
-                        <p className="text-base font-normal">
-                            <span className="font-bold">
-                                Started:
-                            </span> P{props.result.grid}
-                        </p>
+                            </p>
+                            <p className="text-base font-bold">
+                                Grid Position:
+                            </p>
+                            <p className="text-base font-bold">
+                                Fastest Lap:
+                            </p>
+                            <p className="text-base font-bold">
+                                Laps Completed:
+                            </p>
+                        </div>
+                        <div className="w-1/2" >
+                            <p className="text-base font-normal">
+                                {props.result.Time.time}
+                            </p>
+                            <p className="text-base font-normal">
+                                {props.result.grid}
+                            </p>
+                            {flContent}
+                            <p className="text-base font-normal">
+                                {props.result.laps}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-
-                {/* Final race position displayed on the bottom left */}
-                <div className="w-1/2 ">
-                    <h3 className="pb-2 pr-6 text-xl font-bold text-right">
-                        {props.result.position}
-                    </h3>
-                    <p className="pb-1 text-lg font-bold">
-                            #{props.result.number}
-                    </p>
-                    {flContent}
-                </div>
-
             </div>
+    } else {
+        content =
+            <div className="overflow-hidden border-b border-gray-600">
+                <div className="flex flex-row w-screen p-3">
+                    <div className="w-3/4 ">
+                        <h3 className="pb-1 text-xl font-bold text-left">
+                            {props.result.Driver.givenName} {props.result.Driver.familyName} #{props.result.number}
+                        </h3>
+                    </div>
+                    <div className="w-1/4 ">
+                        <h3 className="pb-1 pr-6 text-xl font-bold text-right">
+                            {props.result.position}
+                        </h3>
+                    </div>
+                </div>
+                <div className="p-3 mb-3 ml-2 mr-2 bg-gray-700 rounded-md">
+                    <div className="flex flex-row">
+                        <div className="w-1/2" >
+                            <p className="text-base font-bold">
+                                Status:
+                            </p>
+                            <p className="text-base font-bold">
+                                Grid Position:
+                            </p>
+                            <p className="text-base font-bold">
+                                Fastest Lap:
+                            </p>
+                            <p className="text-base font-bold">
+                                Laps Completed:
+                            </p>
+                        </div>
+                        <div className="w-1/2" >
+                            <p className="text-base font-normal">
+                                {props.result.status}
+                            </p>
+                            <p className="text-base font-normal">
+                                {props.result.grid}
+                            </p>
+                            {flContent}
+                            <p className="text-base font-normal">
+                                {props.result.laps}
+                            </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+    }
+    return(
+        <div>
+            {content}
         </div>
-
-
     )
 }
 

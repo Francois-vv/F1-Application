@@ -20,7 +20,7 @@ function RaceCard(props){
     }
 
     content =
-        <div className="mb-4 overflow-hidden border border-gray-600 rounded">
+        <div className="mb-4 overflow-hidden bg-gray-700 rounded-md">
             <div className="p-3">
                 <h3 className="mb-2 text-xl font-bold">
                     {props.race.raceName}
@@ -35,7 +35,7 @@ function RaceCard(props){
     if (props.race.date <= yesterday){
         content =
             <Link to={`/results/${props.race.season}/${props.race.round}`}>
-                <div className="mb-4 overflow-hidden border border-gray-600 rounded">
+                <div className="mb-4 overflow-hidden bg-gray-700 rounded-md">
                     <div className="p-3">
                         <h3 className="mb-2 text-xl font-bold">
                             {props.race.raceName}
