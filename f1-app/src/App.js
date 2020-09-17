@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Home from "./Views/Home";
-import About from "./Views/About";
-import Results from "./Views/Results";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import Home from './Views/Home'
+import About from './Views/About'
+import Results from './Views/Results'
 
 function App() {
   return (
@@ -13,13 +13,13 @@ function App() {
         <Header />
         <div className="p-3 pt-20">
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/" children={<Home />}>
               <Home />
             </Route>
-            <Route path="/about">
+            <Route exact path="/:id" children={<About />}>
               <About />
             </Route>
-            <Route path="/results/:seasonId/:resultsId/">
+            <Route exact path="/:id/:seasonId/:resultsId/" children={<Results />}>
               <Results />
             </Route>
           </Switch>

@@ -64,6 +64,9 @@ function ResultCard(props){
                             <p className="text-base font-bold">
                                 Laps Completed:
                             </p>
+                            <p className="text-base font-bold">
+                                Points:
+                            </p>
                         </div>
                         <div className="w-1/2" >
                             <p className="text-base font-normal">
@@ -75,6 +78,9 @@ function ResultCard(props){
                             {flContent}
                             <p className="text-base font-normal">
                                 {props.result.laps}
+                            </p>
+                            <p className="text-base font-normal">
+                                {props.result.points}
                             </p>
                         </div>
                     </div>
@@ -113,6 +119,9 @@ function ResultCard(props){
                             <p className="text-base font-bold">
                                 Laps Completed:
                             </p>
+                            <p className="text-base font-bold">
+                                Points:
+                            </p>
                         </div>
                         <div className="w-1/2" >
                             <p className="text-base font-normal">
@@ -124,6 +133,9 @@ function ResultCard(props){
                             {flContent}
                             <p className="text-base font-normal">
                                 {props.result.laps}
+                            </p>
+                            <p className="text-base font-normal">
+                                {props.result.points}
                             </p>
                             </div>
                         </div>

@@ -21,33 +21,35 @@ function Navigation() {
 
   return (
     <nav>
-      <span className="text-xl text-tomato-700">
+      <span className="text-xl text-right text-tomato-700">
         <FontAwesomeIcon icon={faBars} onClick={() => setShowMenu(!showMenu)} />
       </span>
+      <div className="text-left">
+        {maskTransitions.map(
+          ({ item, key, props }) =>
+            item && (
+              <animated.div
+                key={key}
+                style={props}
+                className="fixed top-0 left-0 z-50 w-full h-screen bg-black-t-50"
+                onClick={() => setShowMenu(false)}
+              ></animated.div>
+            )
+        )}
+        {menuTransitions.map(
+          ({ item, key, props }) =>
+            item && (
+              <animated.div
+                key={key}
+                style={props}
+                className="fixed top-0 left-0 z-50 w-3/5 h-full bg-gray-900 shadow"
+              >
+                <NavigationMenu closeMenu={() => setShowMenu(false)} />
+              </animated.div>
+            )
+        )}
+      </div>
 
-      {maskTransitions.map(
-        ({ item, key, props }) =>
-          item && (
-            <animated.div
-              key={key}
-              style={props}
-              className="fixed top-0 left-0 z-50 w-full h-screen bg-black-t-50"
-              onClick={() => setShowMenu(false)}
-            ></animated.div>
-          )
-      )}
-      {menuTransitions.map(
-        ({ item, key, props }) =>
-          item && (
-            <animated.div
-              key={key}
-              style={props}
-              className="fixed top-0 left-0 z-50 w-3/5 h-full bg-gray-900 shadow"
-            >
-              <NavigationMenu closeMenu={() => setShowMenu(false)} />
-            </animated.div>
-          )
-      )}
     </nav>
   )
 }

@@ -9,12 +9,8 @@ function Results() {
   const url = `http://ergast.com/api/f1/${seasonId}/${resultsId}/results.json`
 
   let results= useAxiosGet(url)
-
   let currentRace= null
-
   let content = null
-
-  console.log(results)
 
   if (results.error) {
     content = <p>There was an error please refresh or try again later.</p>

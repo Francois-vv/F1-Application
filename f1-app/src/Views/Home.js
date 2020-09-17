@@ -32,7 +32,7 @@ function Home() {
 
   return (
     <div>
-      <h1 className="pb-3 text-2xl font-bold text-center">Current F1 Schedule</h1>
+      <h1 className="pb-3 text-2xl font-bold text-center">Race Schedule</h1>
       {content}
     </div>
   )
