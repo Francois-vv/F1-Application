@@ -11,6 +11,7 @@ function Results() {
   let results= useAxiosGet(url)
   let currentRace= null
   let content = null
+  let heading = null
 
   if (results.error) {
     content = <p>There was an error please refresh or try again later.</p>
@@ -21,6 +22,12 @@ function Results() {
   }
 
   if (results.data) {
+    currentRace = results.data.MRData.RaceTable.Races[0].raceName
+    heading =
+      <h3 className="pb-3 text-2xl font-bold text-center border-b border-gray-600">
+        {currentRace}
+      </h3>
+
     content =
 
       results.data.MRData.RaceTable.Races[0].Results.map((result, key) =>
@@ -31,14 +38,12 @@ function Results() {
           />
         </div>
       )
-      currentRace = results.data.MRData.RaceTable.Races[0].raceName
+
   }
 
   return(
     <div>
-      <h3 className="pb-3 text-2xl font-bold text-center border-b border-gray-600">
-        {currentRace}
-      </h3>
+    {heading}
     {content}
   </div>
   )

@@ -46,7 +46,7 @@ function ResultCard(props){
                         </h3>
                     </div>
                 </div>
-                <div className="p-3 mb-3 ml-2 mr-2 bg-gray-700 rounded-md">
+                <div className="p-3 mb-1 ml-2 mr-2 bg-gray-700 rounded-md">
                     <h4 className="pb-1 text-lg font-bold text-center">
                         {props.result.Constructor.name}
                     </h4>
@@ -85,6 +85,11 @@ function ResultCard(props){
                         </div>
                     </div>
                 </div>
+                <div className="p-2 text-center">
+                    <button className="w-full px-4 py-2 font-semibold text-white border border-black rounded-md bg-tomato-900 hover:bg-black">
+                        View Driver
+                    </button>
+                </div>
             </div>
     } else {
         content =
@@ -101,7 +106,7 @@ function ResultCard(props){
                         </h3>
                     </div>
                 </div>
-                <div className="p-3 mb-3 ml-2 mr-2 bg-gray-700 rounded-md">
+                <div className="p-3 mb-1 ml-2 mr-2 bg-gray-700 rounded-md">
                     <h4 className="pb-1 text-lg font-bold text-center">
                         {props.result.Constructor.name}
                     </h4>
@@ -139,6 +144,11 @@ function ResultCard(props){
                             </p>
                             </div>
                         </div>
+                </div>
+                <div className="p-2 text-center">
+                    <button className="w-full px-4 py-2 font-semibold text-white border border-black rounded-md bg-tomato-900 hover:bg-black">
+                        View Driver
+                    </button>
                 </div>
             </div>
 
