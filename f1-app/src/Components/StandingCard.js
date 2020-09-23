@@ -6,7 +6,6 @@ function StandingCard(props){
     const flagUrl = findFlagUrlByNationality(props.standing.Driver.nationality)
     let content = null
 
-    // Check if driver has completed the race
         content =
             <div className="overflow-hidden border-b border-gray-600">
                 <div className="flex flex-row w-screen p-3">
