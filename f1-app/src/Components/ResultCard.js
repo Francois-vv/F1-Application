@@ -1,7 +1,9 @@
 ﻿import React from 'react'
+import { findFlagUrlByNationality } from 'country-flags-svg'
 
 function ResultCard(props){
 
+    const flagUrl = findFlagUrlByNationality(props.result.Driver.nationality)
     let content = null
     let flContent = null
     let raceStatus = props.result.status
@@ -36,6 +38,8 @@ function ResultCard(props){
             <div className="overflow-hidden border-b border-gray-600">
                 <div className="flex flex-row w-screen p-3">
                     <div className="w-3/4 ">
+                        <img src={flagUrl} alt={props.result.Driver.nationality}
+                        className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"></img>
                         <h3 className="text-xl font-bold text-left">
                             {props.result.Driver.givenName} {props.result.Driver.familyName} #{props.result.number}
                         </h3>
@@ -96,6 +100,8 @@ function ResultCard(props){
             <div className="overflow-hidden border-b border-gray-600">
                 <div className="flex flex-row w-screen p-3">
                     <div className="w-3/4 ">
+                        <img src={flagUrl} alt={props.result.Driver.nationality}
+                        className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"></img>
                         <h3 className="pb-1 text-xl font-bold text-left">
                             {props.result.Driver.givenName} {props.result.Driver.familyName} #{props.result.number}
                         </h3>

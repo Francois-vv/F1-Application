@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "autoprefixer": "^9.8.6",
     "axios": "^0.20.0",
+    "country-flags-svg": "^1.1.0",
     "postcss-cli": "^7.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
