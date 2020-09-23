@@ -5,6 +5,7 @@ import Footer from './Components/Footer'
 import Home from './Views/Home'
 import About from './Views/About'
 import Results from './Views/Results'
+import Standings from './Views/Standings'
 
 function App() {
   return (
@@ -16,10 +17,13 @@ function App() {
             <Route exact path="/" children={<Home />}>
               <Home />
             </Route>
-            <Route exact path="/:id" children={<About />}>
+            <Route path="/standings" children={<Standings />}>
+              <Standings />
+            </Route>
+            <Route path="/about" children={<About />}>
               <About />
             </Route>
-            <Route exact path="/:id/:seasonId/:resultsId/" children={<Results />}>
+            <Route exact path="/results/:seasonId/:resultsId/" children={<Results />}>
               <Results />
             </Route>
           </Switch>

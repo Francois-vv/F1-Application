@@ -20,6 +20,15 @@ function NavigationMenu(props) {
           </li>
           <li>
             <Link
+              to="/standings"
+              className="block p-3 font-semibold text-tomato-600"
+              onClick={props.closeMenu}
+            >
+              Standings
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/about"
               className="block p-3 font-semibold text-tomato-600"
               onClick={props.closeMenu}

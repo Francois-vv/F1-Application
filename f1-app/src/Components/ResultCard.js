@@ -96,6 +96,8 @@ function ResultCard(props){
                 </div>
             </div>
     } else {
+        // Render drivers who have not finished the race or are more than 1 lap
+        // behind in race time
         content =
             <div className="overflow-hidden border-b border-gray-600">
                 <div className="flex flex-row w-screen p-3">
