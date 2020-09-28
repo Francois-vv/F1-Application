@@ -1,8 +1,7 @@
 ﻿import React from 'react'
 import { findFlagUrlByNationality } from 'country-flags-svg'
 
-function ResultCard(props){
-
+function ResultCard(props) {
     const flagUrl = findFlagUrlByNationality(props.result.Driver.nationality)
     let content = null
     let flContent = null
@@ -10,38 +9,41 @@ function ResultCard(props){
     let flRank = null
 
     // Check if a fastest lap exists
-    if (props.result.FastestLap){
+    if (props.result.FastestLap) {
         flRank = parseInt(props.result.FastestLap.rank)
         // Check if the driver set the fastest lap of the race
-        if (flRank === 1)
-        {
-            flContent =
+        if (flRank === 1) {
+            flContent = (
                 <p className="text-base font-semibold text-left text-purple-500">
                     {props.result.FastestLap.Time.time}
                 </p>
+            )
         } else {
-            flContent =
+            flContent = (
                 <p className="text-base font-normal text-left">
                     {props.result.FastestLap.Time.time}
                 </p>
+            )
         }
     } else {
-        flContent =
-        <p className="text-base font-normal text-left">
-            N/A
-        </p>
+        flContent = <p className="text-base font-normal text-left">N/A</p>
     }
 
     // Check if driver has completed the race
-    if (raceStatus === "Finished"){
-        content =
+    if (raceStatus === 'Finished') {
+        content = (
             <div className="overflow-hidden border-b border-gray-600">
                 <div className="flex flex-row w-screen p-3">
                     <div className="w-3/4 ">
-                        <img src={flagUrl} alt={props.result.Driver.nationality}
-                        className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"></img>
+                        <img
+                            src={flagUrl}
+                            alt={props.result.Driver.nationality}
+                            className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"
+                        ></img>
                         <h3 className="text-xl font-bold text-left">
-                            {props.result.Driver.givenName} {props.result.Driver.familyName} #{props.result.number}
+                            {props.result.Driver.givenName}{' '}
+                            {props.result.Driver.familyName} #
+                            {props.result.number}
                         </h3>
                     </div>
                     <div className="w-1/4 ">
@@ -55,24 +57,18 @@ function ResultCard(props){
                         {props.result.Constructor.name}
                     </h4>
                     <div className="flex flex-row">
-                        <div className="w-1/2" >
-                            <p className="text-base font-bold">
-                                Time:
-                            </p>
+                        <div className="w-1/2">
+                            <p className="text-base font-bold">Time:</p>
                             <p className="text-base font-bold">
                                 Grid Position:
                             </p>
-                            <p className="text-base font-bold">
-                                Fastest Lap:
-                            </p>
+                            <p className="text-base font-bold">Fastest Lap:</p>
                             <p className="text-base font-bold">
                                 Laps Completed:
                             </p>
-                            <p className="text-base font-bold">
-                                Points:
-                            </p>
+                            <p className="text-base font-bold">Points:</p>
                         </div>
-                        <div className="w-1/2" >
+                        <div className="w-1/2">
                             <p className="text-base font-normal">
                                 {props.result.Time.time}
                             </p>
@@ -95,17 +91,23 @@ function ResultCard(props){
                     </button>
                 </div>
             </div>
+        )
     } else {
         // Render drivers who have not finished the race or are more than 1 lap
         // behind in race time
-        content =
+        content = (
             <div className="overflow-hidden border-b border-gray-600">
                 <div className="flex flex-row w-screen p-3">
                     <div className="w-3/4 ">
-                        <img src={flagUrl} alt={props.result.Driver.nationality}
-                        className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"></img>
+                        <img
+                            src={flagUrl}
+                            alt={props.result.Driver.nationality}
+                            className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"
+                        ></img>
                         <h3 className="pb-1 text-xl font-bold text-left">
-                            {props.result.Driver.givenName} {props.result.Driver.familyName} #{props.result.number}
+                            {props.result.Driver.givenName}{' '}
+                            {props.result.Driver.familyName} #
+                            {props.result.number}
                         </h3>
                     </div>
                     <div className="w-1/4 ">
@@ -119,24 +121,18 @@ function ResultCard(props){
                         {props.result.Constructor.name}
                     </h4>
                     <div className="flex flex-row">
-                        <div className="w-1/2" >
-                            <p className="text-base font-bold">
-                                Status:
-                            </p>
+                        <div className="w-1/2">
+                            <p className="text-base font-bold">Status:</p>
                             <p className="text-base font-bold">
                                 Grid Position:
                             </p>
-                            <p className="text-base font-bold">
-                                Fastest Lap:
-                            </p>
+                            <p className="text-base font-bold">Fastest Lap:</p>
                             <p className="text-base font-bold">
                                 Laps Completed:
                             </p>
-                            <p className="text-base font-bold">
-                                Points:
-                            </p>
+                            <p className="text-base font-bold">Points:</p>
                         </div>
-                        <div className="w-1/2" >
+                        <div className="w-1/2">
                             <p className="text-base font-normal">
                                 {props.result.status}
                             </p>
@@ -150,8 +146,8 @@ function ResultCard(props){
                             <p className="text-base font-normal">
                                 {props.result.points}
                             </p>
-                            </div>
                         </div>
+                    </div>
                 </div>
                 <div className="p-2 text-center">
                     <button className="w-full px-4 py-2 font-semibold text-white border border-black rounded-md bg-tomato-900 hover:bg-black">
@@ -159,13 +155,9 @@ function ResultCard(props){
                     </button>
                 </div>
             </div>
-
+        )
     }
-    return(
-        <div>
-            {content}
-        </div>
-    )
+    return <div>{content}</div>
 }
 
 export default ResultCard
