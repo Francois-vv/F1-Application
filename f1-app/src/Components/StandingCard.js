@@ -45,11 +45,13 @@ function StandingCard(props) {
                     </div>
                 </div>
             </div>
-            <div className="p-2 text-center">
-                <button className="w-full px-4 py-2 font-semibold text-white border border-black rounded-md bg-tomato-900 hover:bg-black">
-                    View Driver
-                </button>
-            </div>
+            <a href={props.standing.Driver.url}>
+                <div className="p-2 text-center">
+                    <button className="w-full px-4 py-2 font-semibold text-white border border-black rounded-md bg-tomato-900 hover:bg-black">
+                        Driver Wikipedia
+                    </button>
+                </div>
+            </a>
         </div>
     )
     return <div>{content}</div>
