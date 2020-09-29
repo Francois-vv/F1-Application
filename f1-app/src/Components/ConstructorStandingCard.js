@@ -1,8 +1,10 @@
 ﻿import React from 'react'
 import { findFlagUrlByNationality } from 'country-flags-svg'
 
-function StandingCard(props) {
-    const flagUrl = findFlagUrlByNationality(props.standing.Driver.nationality)
+function ConstructorStandingCard(props) {
+    const flagUrl = findFlagUrlByNationality(
+        props.standing.Constructor.nationality
+    )
     let content = null
 
     content = (
@@ -11,13 +13,11 @@ function StandingCard(props) {
                 <div className="w-3/4 ">
                     <img
                         src={flagUrl}
-                        alt={props.standing.Driver.nationality}
+                        alt={props.standing.Constructor.nationality}
                         className="float-left object-scale-down object-center w-10 h-10 pb-2 mr-2"
                     ></img>
                     <h3 className="text-xl font-bold text-left">
-                        {props.standing.Driver.givenName}{' '}
-                        {props.standing.Driver.familyName} #
-                        {props.standing.Driver.permanentNumber}
+                        {props.standing.Constructor.name}
                     </h3>
                 </div>
                 <div className="w-1/4 ">
@@ -27,9 +27,6 @@ function StandingCard(props) {
                 </div>
             </div>
             <div className="p-3 mb-1 ml-2 mr-2 bg-gray-700 rounded-md">
-                <h4 className="pb-1 text-lg font-bold text-center">
-                    {props.standing.Constructors[0].name}
-                </h4>
                 <div className="flex flex-row">
                     <div className="w-1/2">
                         <p className="text-base font-bold">Points:</p>
@@ -45,10 +42,10 @@ function StandingCard(props) {
                     </div>
                 </div>
             </div>
-            <a href={props.standing.Driver.url}>
+            <a href={props.standing.Constructor.url}>
                 <div className="p-2 text-center">
                     <button className="w-full px-4 py-2 font-semibold text-white border border-black rounded-md bg-tomato-900 hover:bg-black">
-                        Driver Wikipedia
+                        Constructor Wikipedia
                     </button>
                 </div>
             </a>
@@ -57,4 +54,4 @@ function StandingCard(props) {
     return <div>{content}</div>
 }
 
-export default StandingCard
+export default ConstructorStandingCard
