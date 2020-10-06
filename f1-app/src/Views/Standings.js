@@ -36,13 +36,13 @@ function Standings() {
             tabContent = (
                 <ul className="flex border-b border-gray-600 list-reset">
                     <li className="mr-1 -mb-px">
-                        <button className="inline-block px-4 py-2 font-semibold bg-gray-800 border-t border-l border-r border-gray-600 rounded-t text-blue-dark">
+                        <button className="inline-block px-4 py-2 font-semibold bg-gray-800 border-t border-l border-r border-gray-600 rounded-t text-tomato-700">
                             Drivers
                         </button>
                     </li>
                     <li className="mr-1">
                         <button
-                            className="inline-block px-4 py-2 font-semibold bg-gray-800 rounded-t text-blue hover:text-blue-darker"
+                            className="inline-block px-4 py-2 font-semibold bg-gray-800 rounded-t"
                             onClick={() => setIsConstructor(true)}
                         >
                             Constructors
@@ -62,20 +62,19 @@ function Standings() {
                 <ul className="flex border-b border-gray-600 list-reset">
                     <li className="mr-1">
                         <button
-                            className="inline-block px-4 py-2 font-semibold bg-gray-800 rounded-t text-blue hover:text-blue-darker"
+                            className="inline-block px-4 py-2 font-semibold bg-gray-800 rounded-t"
                             onClick={() => setIsConstructor(false)}
                         >
                             Drivers
                         </button>
                     </li>
-                    <li className="pb-px mr-1">
-                        <button className="inline-block px-4 py-2 font-semibold bg-gray-800 border-t border-l border-r border-gray-600 rounded-t text-blue-dark">
+                    <li className="mr-1 -mb-px">
+                        <button className="inline-block px-4 py-2 font-semibold bg-gray-800 border-t border-l border-r border-gray-600 rounded-t text-tomato-700">
                             Constructors
                         </button>
                     </li>
                 </ul>
             )
-            console.log({ constructorStandings })
             content = constructorStandings.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings.map(
                 (standing, key) => (
                     <div key={key}>
